@@ -3,7 +3,7 @@
 
 Folders with code components of platonic model of sound automaton installation.
 Contents are both active components, variations, notes, and final compilations of files to a single run.
-The synth containts up to 1 input apart fron polyphony on of.
+The synth containts up to 1 input apart fron polyphony on/of toggle switch.
 Files include:
 Partials
 Wave table
