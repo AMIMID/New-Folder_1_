@@ -35,11 +35,10 @@ k = Synth.new(\iter_d);
 	"fundamental".postln; fundamental =440.postln;
 	a=octave;
 	sum=Out.ar(0,PanAz.ar(2,SinOsc.ar(fundamental,mul:1),LFNoise1.ar(1)));
-	partials=partials;
 	fm = SinOsc.ar(fundamental,mul:100);
 	partials.do{
 		x=x+1;
-		y1 = (gain/gain+x);
+		y1 = ((gain+x)/gain);
 		y2 = ((x+a)/x);
 		"freq".postln;freq=(fundamental/y2).postln;
 		"amp".postln;amp=(gain/y1).postln;

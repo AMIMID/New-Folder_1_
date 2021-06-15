@@ -4,4 +4,10 @@
 //fundamental....ight sensor midi//// total gain (for amp calibration) pot 10k
 /////////////////////////////////////////////////////////////////////////////
 /////presence(automation in gain)
-////stimme on/off (light sensor etc)
+////////////////////////////////////////////////////////////
+
+
+////stimme on/off midi note on
+
+
+////note sequence equal to solid 16 seq, 24 seq etc
