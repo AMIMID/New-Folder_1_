@@ -1,4 +1,3 @@
-
 (a= Pdef(\voice_1, Pbind(\instrument, \r0,
 	\dur,Pexprand(1,6,inf),
 	\t,Pexprand(1,2,inf),
