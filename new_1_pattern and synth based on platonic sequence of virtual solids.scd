@@ -69,10 +69,10 @@ s.options.numOutputBusChannels=8;
 /////////////////////////////synth
 (SynthDef(\r0,{
 	arg t=1,fundamental=330,xy=1,y=1,z=1,a=1;
-	var frequency=1, x=0, y1=0,y2=0, gain=1, duration=6, bend=(-3),  envelope=1, signalo=0,mul=1,signalo=0;
-	signal, sound, dual,tetraz,azocta1,azocta2,azocta3,azocta4,azocta5,azocta6,azocta7,azocta8;
+	var frequency=1, x=0, y1=0,y2=0, gain=1, duration=6, bend=(-3),  envelope=1, signalo=0,mul=1,signal=0;
+	signal, sound, dual,icosaeder,azocta1,azocta2,azocta3,azocta4,azocta5,azocta6;
 	fundamental=fundamental*666;
-	4.do{
+	12.do{
 		//bus=bus+2;
 		x=x+1;
 		y1 = ((x+a)/x);
@@ -82,10 +82,10 @@ s.options.numOutputBusChannels=8;
 		theta = ((Complex(y2,y1).abs)+x)/(Complex(y2,y1).abs);
 		duration=theta*2;
 		envelope=EnvGen.kr(Env.sine(duration),doneAction:2);
-		signal=SinOsc.ar(frequenc,mul: mul)*envelope;
-		dual = PanAz.ar(6,signal,LFSaw.ar(tetraz))*envelope;
-		signalo=signalo +spat;
-		signalo = signalo*envelope;
+		sound=SinOsc.ar(frequenc,mul: mul)*envelope;
+		dual = PanAz.ar(6,sound,LFSaw.ar(icosaeder))*envelope;
+		signal=signal +dual;
+		signal = signal*envelope;
 	};
 	Out.ar(24,signalo);
 	azocta1= PanAz.ar(4,InFeedback.ar(24),pos:LFSaw.ar());
@@ -95,9 +95,9 @@ s.options.numOutputBusChannels=8;
 	azocta5= PanAz.ar(4,InFeedback.ar(28),pos:LFSaw.ar());
 	azocta6= PanAz.ar(4,InFeedback.ar(29),pos:LFSaw.ar());
 	Out.ar(0,azocta1);
-	Out.ar(0,azocta2);
-	Out.ar(0,azocta3);
-	Out.ar(0,azocta4);
-	Out.ar(0,azocta5);
-	Out.ar(0,azocta6);
+	Out.ar(4,azocta2);
+	Out.ar(8,azocta3);
+	Out.ar(12,azocta4);
+	Out.ar(16,azocta5);
+	Out.ar(20,azocta6);
 }).add)
