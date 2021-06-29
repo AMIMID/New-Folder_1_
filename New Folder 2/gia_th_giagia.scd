@@ -10,7 +10,7 @@
 	var frequency=1, x=0, y1=0,y2=0, gain=1/2, duration=6, bend=(-3),  envelope=1,mul=1,signal=0,w,
 	mono,pan3,sound=0,spat=0,elevation,azimuth1,azimuth2,audio;
 
-	fundamental=fundamental*440;
+	fundamental=fundamental*110;
 
 	3.do{
 		x=x+1;
@@ -32,7 +32,7 @@
 	pan2= (MouseY.kr(3/4,1/2));
 	pan3= Complex(pan1,pan2).magnitude;
 
-	w=PanAz.ar(6,sound,SinOsc.ar(2));
+	w=PanAz.ar(12,sound*1/6,SinOsc.ar(2));
 	Out.ar(0,w);
 	audio = PanAz.ar(3,sound,LFSaw.ar(pan1));
 	Out.ar(12,audio*0.5);
